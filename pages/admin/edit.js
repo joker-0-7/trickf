@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
-import dynamic from "next/dynamic";
-const ReactQuill = dynamic(import('react-quill'), { ssr: false })
+// import dynamic from "next/dynamic";
+// const ReactQuill = dynamic(import('react-quill'), { ssr: false })
 const Edit = () => {
   const [data, setData] = useState();
   const [name, setName] = useState("");
@@ -83,20 +83,20 @@ const Edit = () => {
             />
           </div>
           <div className="title">
-            <ReactQuill
+            <textarea
               className="form-control mb-4"
               placeholder="title "
               value={title}
-              onChange={(e) => setTitle(e)}
-            ></ReactQuill>
+              onChange={(e) => setTitle(e.target.value)}
+            ></textarea>
           </div>
           <div className="condition">
-            <ReactQuill 
+            <textarea 
               className="form-control mb-4"
               placeholder="title"
               value={condition}
-              onChange={(e) => setCondition(e)}
-            ></ReactQuill>
+              onChange={(e) => setCondition(e.target.value)}
+            ></textarea>
           </div>
           <div className="price">
             <input
