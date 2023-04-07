@@ -80,12 +80,12 @@ const Add = () => {
                   ></textarea>
                 </div>
                 <div className="condition">
-                  <ReactQuill
+                  <textarea
                     className="form-control mb-4"
                     placeholder="title"
                     value={title}
-                    onChange={(e) => setCondition(e)}
-                  ></ReactQuill>
+                    onChange={(e) => setCondition(e.target.value)}
+                  ></textarea>
                 </div>
                 <div className="price">
                   <input
