@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Nav from "./components/Nav";
-import dynamic from "next/dynamic";
-const ReactQuill = dynamic(import('react-quill'), { ssr: false })
+// import dynamic from "next/dynamic";
+// const ReactQuill = dynamic(import('react-quill'), { ssr: false })
 import axios from "axios";
 const Add = () => {
   const [img, setImg] = useState({});
@@ -72,12 +72,12 @@ const Add = () => {
                   />
                 </div>
                 <div className="title">
-                  <ReactQuill
+                  <textarea
                     className="form-control mb-4"
                     placeholder="title"
                     value={title}
-                    onChange={(e) => setTitle(e)}
-                  ></ReactQuill>
+                    onChange={(e) => setTitle(e.target.value)}
+                  ></textarea>
                 </div>
                 <div className="condition">
                   <ReactQuill
